@@ -15,12 +15,12 @@ import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 const SideBar = () =>
 {
     return (
-        <div className="   flex-2   border-r-2 border-solid  border-r-blue-400 h-screen">
+        <div className="  flex-initial w-48  border-r-2 border-solid  font-semibold font-serif border-r-blue-400 h-max-full ">
             {/* Top */ }
-            <div className=" h-10 flex justify-center items-center font-mono font-bold ">
-                <spn className="text-xl text-blue-400 p-4">AmirSaeed hlkadfkjasd</spn>
+            <div className=" h-10 flex justify-center items-center font-mono font-bold pt-3">
+                <spn className="text-xl text-blue-400 p-4">AmirSaeed </spn>
             </div>
-            <hr className="border h-0 border-blue-400" />
+            <hr className="border h-0 border-blue-400 mt-5" />
             {/* Middle */ }
             <div className=" list-none pl-4">
                 <p className=" uppercase text-[10px] text-slate-500 mt-4 mb-1">main</p>
