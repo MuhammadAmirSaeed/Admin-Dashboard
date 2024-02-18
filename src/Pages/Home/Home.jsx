@@ -28,7 +28,7 @@ const Home = () =>
         {/* Featured and chart */ }
         <div className=" flex gap-4 px-4">
           <Featured />
-          <Chart />
+          <Chart title="Last 12 months Revenue" />
         </div>
 
         {/*  ============================*/ }

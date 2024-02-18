@@ -153,7 +153,7 @@ const TableComponent = () =>
                                 <TableCell>{ row.product }</TableCell>
                                 <TableCell>
                                     <div>
-                                        <img src={ row.img } alt="" className='w-15 h-20 rounded-md' />
+                                        <img src={ row.img } alt="" className='w-10 h-10 rounded-full' />
                                     </div>
                                 </TableCell>
 
@@ -161,15 +161,18 @@ const TableComponent = () =>
                                 <TableCell>{ row.date }</TableCell>
                                 <TableCell align="right">{ row.amount }</TableCell>
                                 <TableCell>{ row.method }</TableCell>
-                                <TableCell className={ ` rounded-md p-2 ${ getStatusColor(row.status).bgColor }` }>
-                                    <span className={ `font-bold ${ getStatusColor(row.status).textColor }` }>{ row.status }</span>
+                                <TableCell>
+                                    <span className={ `font-bold ${ getStatusColor(row.status).textColor } px-2 py-1 rounded ${ getStatusColor(row.status).bgColor }` }>
+                                        { row.status }
+                                    </span>
                                 </TableCell>
+
                             </TableRow>
                         )) }
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div>
+        </div >
     );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-const Chart = () =>
+const Chart = ({ title, }) =>
 {
     const data = [
         { name: "Jan", uv: 1200 },
@@ -20,8 +20,8 @@ const Chart = () =>
 
     return (
         <div className='flex-1 rounded-md h-full  shadow-md p-2'>
-            <h4 className='font-bold text-slate-500'>A Revenue of Last 12 months</h4>
-            <ResponsiveContainer width="100%" height={ 200 }>
+            <h4 className='font-bold text-slate-500'>{ title }</h4>
+            <ResponsiveContainer width="100%" height={ 200 } >
                 <AreaChart
                     width={ 500 }
                     height={ 200 }
