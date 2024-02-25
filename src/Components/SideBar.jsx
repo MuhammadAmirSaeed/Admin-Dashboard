@@ -118,7 +118,7 @@ const SideBar = () =>
                 </span>
             </div>
             {/* Bottom */ }
-            <div className="">Bottom</div>
+            <div className=""></div>
         </div>
     );
 };
