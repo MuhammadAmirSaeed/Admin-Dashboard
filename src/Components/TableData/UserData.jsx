@@ -27,8 +27,8 @@ const columns = [
         renderCell: (params) => (
             <span
                 className={ `px-2 py-1 rounded ${ params.row.status === 'active'
-                        ? 'text-green-500 bg-green-100'
-                        : 'text-red-500 bg-red-100'
+                    ? 'text-green-500 bg-green-100'
+                    : 'text-red-500 bg-red-100'
                     }` }
             >
                 { params.row.status }

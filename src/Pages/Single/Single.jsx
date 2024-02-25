@@ -14,7 +14,7 @@ const Single = () =>
       {/* top */ }
       <div className="flex">
         <div className="">
-          <div className=" shadow-lg shadow-blue-400 w-80 ml-3 p-3 rounded-lg overflow-hidden bg-white my-6 " >
+          <div className=" shadow-lg shadow-blue-400  w- ml-3 p-3 rounded-lg overflow-hidden bg-white my-6 " >
             <div className="flex justify-between items-start">
               <div>
                 <h1 className="font-bold text-2xl">Information</h1>

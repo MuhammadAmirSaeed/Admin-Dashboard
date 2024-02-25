@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SideBar from '../../Components/SideBar'
 import NavBar from '../../Components/NavBar'
+import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 
-const New = () =>
+const New = ({ title, inputs }) =>
 {
+    const [file, setFile] = useState('')
+    console.log(file)
     return (
         <div className='flex'>
             <SideBar />
@@ -11,66 +14,43 @@ const New = () =>
                 <NavBar />
                 {/* top */ }
                 <div className='p-4 flex max-w-full shadow-lg shadow-slate-700 rounded-lg m-3 '>
-                    <h1>New user</h1>
+                    <h1 className=' font-sans text-lg  font-semibold text-slate-600'>{ title }</h1>
                 </div>
                 {/* bottom */ }
                 <div className='flex max-w-full shadow-lg shadow-slate-700 m-4 p-4 '>
 
                     {/* left */ }
                     <div className='flex'>
-                        <div className=' w-44'>   <img src='https://img.icons8.com/?size=90&id=8ax09IWlr80n&format=png' alt='user' className='h-20 w-20 border  text-slate-500 ' /></div>
+                        <div className=' w-60'>   <img src={ file ? URL.createObjectURL(file) : 'https://img.icons8.com/?size=96&id=8ax09IWlr80n&format=png' } alt='user' className='h-36 w-36 rounded-full    cursor-pointer ' /></div>
 
                     </div>
                     {/* Right */ }
                     <div className='flex-1'>
-                        <form>
-                            <div>
-                                <label>
-                                    User
+                        <form className='flex flex-wrap gap-10'>
+                            <div className='w-[40%]'>
+                                <label htmlFor='file'>
+                                    Image <DriveFolderUploadIcon />
                                 </label>
-                                <input type='text' placeholder='enter your name' className='border w-full p-2 rounded-md' />
+                                <input type='file' id='file' className='hidden' onChange={ e => setFile(e.target.files[0]) } />
                             </div>
-                            <div>
-                                <label>
-                                    Name and surname
-                                </label>
-                                <input type='text' placeholder='enter your surname' className='border w-full p-2 rounded-md' />
-                            </div>
-                            <div>
-                                <label>
-                                    Email
-                                </label>
-                                <input type='email' placeholder='example@gmail.com' className='border w-full p-2 rounded-md' />
-                            </div>
-                            <div>
-                                <label>
-                                    Password
-                                </label>
-                                <input type='Password' placeholder='enter your password' className='border w-full p-2 rounded-md' />
-
-                            </div>
-                            <div>
-                                <label>
-                                    Phone
-                                </label>
-                                <input type='text' placeholder='+92 394023242' className='border w-full p-2 rounded-md' />
-
-                            </div>
-                            <div>
-                                <label>
-                                    Address
-                                </label>
-                                <input type='text' placeholder='Block A Johar Town Lahore' className='border w-full p-2 rounded-md' />
-
-                            </div>
-                            <div>
-                                <label>
-                                    Country
-                                </label>
-                                <input type='text' placeholder='Pakistan' className='border w-full p-2 rounded-md' />
-
+                            { inputs.map((input) => (
+                                <div className='w-[40%]' key={ input.id }>
+                                    <label htmlFor={ input.label }>{ input.label }:</label>
+                                    <input
+                                        type={ input.type }
+                                        id={ input.label }
+                                        placeholder={ input.placeholder }
+                                        className='border-b border-gray-300 px-3 w-full focus:outline-none focus:border-blue-400'
+                                    />
+                                </div>
+                            )) }
+                            <div className='w-full'>
+                                <button className='bg-blue-200 px-8 mb-0 rounded-md shadow-md hover:bg-blue-400 text-md font-semibold self-start'>
+                                    Send
+                                </button>
                             </div>
                         </form>
+
 
                     </div>
                 </div>
